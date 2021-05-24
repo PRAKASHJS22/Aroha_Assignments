@@ -8,7 +8,23 @@
 </head>
 <body>
     <script>
-            
+        function showProperties()
+        {
+            let movie = {
+                title: 'Tenet',
+                releaseYear : 2021,
+                rating : 8.1,
+                director : 'Christopher Nolan'
+            }
+
+            for(let key in movie)
+            {
+               if(typeof movie[key] === 'string')
+                    alert("The string Properties are : " + key);
+            }
+        }
+        showProperties();
+        
     </script>
 </body>
 </html>
