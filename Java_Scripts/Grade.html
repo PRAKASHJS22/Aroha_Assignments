@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade</title>
+</head>
+<body>
+<script>
+    function grade()
+    {
+        let marks = [90,80,85,90,95,85];
+        let len = marks.length;
+        let sum=0;
+        let avg= 0;
+            for(let i=0;i<marks.length;i++)
+            {
+                sum += marks[i]; 
+            }
+            avg += sum/len;
+         
+            switch(parseInt(avg/10)){
+                case 5:
+                    // if(avg > 1  && avg < 59)
+                        alert("The grade is F");
+                        break;
+                case 6 :
+                    // if(avg > 60  && avg < 69)
+                        alert("The grade is D");
+                        break; 
+                case 7:
+                    // if(avg > 70  && avg < 79)
+                        alert("The grade is C");
+                        break;     
+                case 8:
+                     //if(avg > 80  && avg < 89)
+                        alert("The grade is B");
+                        break; 
+                case 9:
+                     //if(avg > 90  && avg < 100)
+                        alert("The grade is A ");
+                        break; 
+                default:
+                    alert("No grade");
+            }
+
+    }
+    grade();
+</script>
+
+
+
+</body>
+</html>
