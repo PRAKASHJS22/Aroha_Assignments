@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fizz and buzz</title>
+</head>
+<body>
+    <script>
+        let number=parseInt(prompt("Enter a number"));
+
+        function fizzBuzz(n)
+        {
+            if((n % 3 === 0) && (n% 5 === 0))
+                alert("FizzBuzz");
+
+            else if(n % 3 === 0)
+                alert("Fizz");
+
+            else if(n % 5 === 0)
+                alert("Buzz");
+            else
+                alert("Not Divisible  BY 3 And 5")
+            
+        }
+        fizzBuzz(number);
+
+
+        // function fizzBuzz(n)
+        // {
+
+        //     switch (true) {
+
+        //         case (n % 5 === 0 && n % 3 === 0):
+        //             alert("FizzBuzz");
+        //             break;
+        //         case (n % 3 === 0):
+        //             alert("Fizz");
+        //             break;
+        //         case (n % 5 === 0):
+        //             alert("Buzz");
+        //             break;
+        //         default:
+        //             alert("Not Divisible  BY 3 And 5");
+        //                 }
+
+        //  }
+        // fizzBuzz(number);
+
+    </script>
+</body>
+</html>
