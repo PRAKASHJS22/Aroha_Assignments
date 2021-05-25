@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truthy</title>
+</head>
+<body>
+    <script>
+        let arr = [true, undefined, false, true,null,0,NaN,''];
+
+        let count = 0;
+            
+        function truthy()
+        {
+            for(let i = 0 ;i< arr.length;i++)
+            {
+                if(arr[i] === true)
+                     count++;
+            }
+            
+            alert("Total truthy count is : " + count);
+        }
+        truthy();
+    </script>
+</body>
+</html>
