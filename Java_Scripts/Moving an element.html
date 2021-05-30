@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercie 4 : Moving an Element</title>
+</head>
+<body>
+    <script>
+
+        let array_sample = [1,2,3,4,5];
+
+        let array_sample_len = array_sample.length;
+
+        console.log('Initial_Array:', array_sample);
+
+        function array_element_insert(array_sample,index, ...n) 
+        {
+            if(index >  array_sample_len )
+            {
+                console.log("Please Enter index up to " +array_sample_len );
+            }
+            else 
+            {
+              array_sample.splice(index, 0, ...n);
+            }
+
+         console.log('Final Array:', array_sample);
+        }
+
+        array_element_insert(array_sample,5,6);
+       
+    </script>
+</body>
+</html>

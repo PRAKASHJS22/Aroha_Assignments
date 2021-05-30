@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Movies></title>
+</head>
+<body>
+    <script>
+
+        const movies = [
+                            { title: 'KGF', year: 2018, rating: 4.5 },
+                            { title: 'Tenet', year: 2018, rating: 4.7 },
+                            { title: 'Iron Man', year: 2018, rating: 3 },
+                            { title: 'Avengers', year: 2017, rating: 4.5 }
+                       ];
+        let i = 0;
+        function results()
+        {
+             for( i in Object.entries(movies))
+                {
+                     if(movies[i].rating > 4  &&  movies[i].year === 2018 )
+                    {
+                     
+                        console.log("The Movies are : " +   movies[i].title );
+                     
+                    }
+                }   
+        }  
+
+        results();
+
+
+        let byratings = movies.slice(0);
+
+        byratings.sort((a,b) =>  (b.rating - a.rating)).reduce((a,b)=> byratings.title);
+
+        console.log('By Ratings:');
+        console.log(byratings);
+
+
+        // let bytitlename = movies.slice(0);
+
+        // bytitlename.sort(function(a,b)
+        //     {
+        //     var x = a.title.toLowerCase();
+        //     var y = b.title.toLowerCase();
+        //     return x < y ? -1 : x > y ? 1 : 0;
+        // });
+        // console.log('By Title:');
+        // console.log(bytitlename);
+
+    </script>
+    
+</body>
+</html
