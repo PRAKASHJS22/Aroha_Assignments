@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch </title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>Stop watch </h1>
+    <script>
+
+
+
+        function StopWatch()
+        {
+
+
+            let start_time, end_time, time_running, total_duration = 0;
+            
+            this.start = function()
+            {
+                if(time_running) 
+                    throw new Error("Stop watch is already started");
+                
+                time_running = true;
+
+                start_time = new Date();
+
+                console.log("Stop watch started");
+
+            };
+
+            this.stop = function()
+            {
+                if(!time_running)
+                    throw new Error("Stop watch is not started to stop");
+                
+                time_running = false;
+
+                end_time = new Date();
+                
+                console.log("Stop watch stopped!!");
+
+                let total_time = (end_time.getTime() - start_time.getTime())/1000;     //gettime will give in milliseconds so we divide it by 1000
+
+                total_duration += total_time;
+            };
+
+            this.reset = function()
+            {
+                
+                start_time,end_time = null;
+                time_running = false;
+                duration = 0;
+
+                console.log("Stop watch reseted");
+            };
+
+            Object.defineProperty(this,'total_duration',
+            {
+                get : function(){ return " The Total duration is " + total_duration +"s";}      //only readable  cannot modify
+            }
+            );
+
+        }
+
+       let stop_watch = new StopWatch();
+       console.log(stop_watch);    
+
+    </script>
+</body>
+</html>
