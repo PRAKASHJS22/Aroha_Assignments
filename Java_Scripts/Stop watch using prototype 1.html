@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Watch using Prototype</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+<h1>Stop watch using Prototype </h1>
+    <script>
+
+        function StopWatch()  //Constructor Function
+        {
+
+            this.start_time=0;
+            this.end_time=0;
+            this.time_running=false;
+            this.total_time=0;
+            
+        }  
+
+        //Using Prototype we define functions 
+
+        StopWatch.prototype = 
+            {
+                start()
+                {
+                if(this.time_running) 
+                    throw new Error("Stop watch is already started");
+                
+                this.time_running = true;
+
+                this.start_time = new Date();
+
+                console.log("Stop watch started");
+                },
+    
+
+                stop()
+                {
+
+                if(!this.time_running)
+                    throw new Error("Stop watch is not started to stop");
+                
+                this.time_running = false;
+
+                this.end_time = new Date();
+                
+                console.log("Stop watch stopped!!");
+
+                this.total_time = (this.end_time.getTime() - this.start_time.getTime())/1000;
+
+                
+
+                },
+
+                reset()
+                {
+
+                this.start_time,this.end_time = null;
+                this.time_running = false;
+                this.total_time = 0;
+
+                console.log("Stop watch reseted");
+
+        
+                },
+
+                duration()
+                {
+                      console.log(" The Total duration is " + this.total_time +"s");   
+                
+                }
+            };
+ 
+        let stop_watch = new StopWatch();
+     
+    </script>
+</body>
+</html>
